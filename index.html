@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            flex-direction: column;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 10px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            width: 400px;
+        }
+        h1 {
+            color: #d63031;
+            font-size: 26px;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        button {
+            font-size: 18px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.2s, background 0.3s;
+        }
+        .yes {
+            background-color: #ff4757;
+            color: white;
+            font-weight: bold;
+        }
+        .yes:hover {
+            background-color: #e84118;
+            transform: scale(1.1);
+        }
+        .no {
+            background-color: white;
+            color: black;
+            position: absolute;
+            border: 2px solid #ff4757;
+        }
+        .no:hover {
+            transform: scale(1.1);
+        }
+        @media (max-width: 600px) {
+            .buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .no {
+                position: relative;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will you be my Valentine? ❤️</h1>
+        <div class="buttons">
+            <button class="yes" onclick="sayYes()">Yes</button>
+            <button class="no" onmouseover="moveButton()">No</button>
+        </div>
+    </div>
+
+    <script>
+        function sayYes() {
+            alert("Yay! You are my Valentine! 💖");
+        }
+        
+        function moveButton() {
+            let button = document.querySelector('.no');
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
